@@ -53,11 +53,7 @@ public class ControladorInventario {
         ArrayList<Incidencia> incidenciasPorEstado = new ArrayList<Incidencia>();    
 
         for (int i = 0; i < incidencias.size(); i++){
-            System.out.println("estados   : ");
-            System.out.println(incidencias.get(i).getEstado());
-            System.out.println(estado);
-            System.out.println();
-            if (!incidencias.get(i).getEstado().equals(estado)){
+            if (incidencias.get(i).getEstado() != null && estado != null && !incidencias.get(i).getEstado().equals(estado)) {
                 incidenciasPorEstado.add(incidencias.get(i));
             }
         }
