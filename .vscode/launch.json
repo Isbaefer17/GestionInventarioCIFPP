@@ -1,0 +1,42 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "GestionInventarioCifppApplication",
+            "request": "launch",
+            "mainClass": "es.cifpp.gestion_inventario.GestionInventarioCifppApplication",
+            "projectName": "gestion_inventario_cifpp"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-GestionInventarioCifppApplication<gestion_inventario_cifpp>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.cifpp.gestion_inventario_cifpp.GestionInventarioCifppApplication",
+            "projectName": "gestion_inventario_cifpp",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=54962 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=gestion_inventario_cifpp"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-GestionInventarioCifppApplication<gestion_inventario_cifpp>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "es.cifpp.gestion_inventario_cifpp.GestionInventarioCifppApplication",
+            "projectName": "gestion_inventario_cifpp",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-GestionInventarioCifppApplication<gestion_inventario_cifpp>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "es.cifpp.gestion_inventario_cifpp.aplicacion.GestionInventarioCifppApplication",
+            "projectName": "gestion_inventario_cifpp",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
