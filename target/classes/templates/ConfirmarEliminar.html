@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Inventario CIFPP</title>
+    <link rel="icon" type="image/png" href="/Imagenes/logo_centro.png">
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+    <form id="eliminar" th:action="${action}" method="post">
+        <input type="hidden" name="id" th:value="${id}">
+        <h1>Vas a eliminar lo siguiente</h1>
+        <div th:utext="${tabla}" class="ocultarBotones"></div> <br/>
+        <label>¿Deseas continuar?</label>
+        <button type="submit">Eliminar</button>
+        <button><a href="/volverAInicio">Cancelar</a></button><br/>
+    </form>
+</body>
+</html>

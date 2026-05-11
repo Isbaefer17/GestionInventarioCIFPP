@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Inventario CIFPP</title>
+    <link rel="icon" type="image/png" href="/Imagenes/logo_centro.png">
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+</head>
+<body>
+    <h1>Inventario CIFPP</h1>
+    <h1 th:utext = ${nombreUsuario}></h1>
+    <div class="botones">
+        <form th:action="@{/confirmarModificarUsuario}" method="get">
+            <input type="hidden" name="id" th:value="${miId}">
+            <button type="submit">Modificar usuario</button>
+        </form>
+        <form th:action="@{/mostrarPrestamosActivosUsuario}" method="post">
+            <input type="hidden" name="idUsuario" th:value="${miId}">
+            <button type="submit">Ver tus prestamos activos</button>
+        </form>
+        <div class="botones" sec:authorize="hasRole('Administrador')">
+            <a href="#devolverObjeto"><button>Devolver un objeto</button></a>
+            <a href="/mostrarObjetos"><button>Ir a Objetos</button></a>
+            <a href="/mostrarUsuarios"><button>Ir a Usuarios</button></a>
+            <a href="/mostrarTipos"><button>Ir a Tipos</button></a>
+            <a href="/mostrarPrestamos"><button>Ir a Préstamos</button></a>
+            <a href="/mostrarIncidencias"><button>Ir a Incidencias</button></a>
+            <a href="/GenerarInventario"><button>Hacer inventario</button></a>
+        </div>
+
+        <div class="botones" sec:authorize="hasRole('Profesor')">
+            <a href="#devolverObjeto"><button>Devolver un objeto</button></a>
+            <a href="/mostrarIncidencias"><button>Crear una Incidencias</button></a>
+        </div>
+
+        <div class="botones" sec:authorize="hasRole('Alumno')">
+            <a href="/mostrarIncidencias"><button>Crear una Incidencias</button></a>
+        </div>
+
+        <a href="/IniciarSesion"><button>Cerrar Sesión</button></a>
+    </div>
+    <div th:utext="${botones}"></div>
+    <div th:utext="${tabla}"></div>
+    <p th:utext="${eliminar}"></p>
+    <p th:utext="${anyadir}"></p>
+    <p th:utext="${modificar}"></p>
+
+    <div class="formularios" sec:authorize="hasAnyRole('Profesor','Administrador')">
+        <form id="devolverObjeto" th:action="@{/devolverPrestamo}" method="post">
+            <input type="hidden" name="idUsuario" th:value="${miId}">
+            <label for="idObjeto">Introduce el código objeto a devolver: </label>
+            <input type="text" name="idObjeto" placeholder="Introduce el código del objeto"/><br/>
+            <button type="submit">devolver préstamo</button>
+        </form>
+    </div>
+</body>
+</html>

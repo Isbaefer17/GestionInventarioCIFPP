@@ -1,0 +1,48 @@
+table, td, th{
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+
+
+th{
+    background-color: cadetblue;
+    text-align: center;
+    vertical-align: middle;
+}
+
+td{
+    text-align: center;
+    vertical-align: middle;
+}
+
+.ocultarBotones tr td:nth-last-child(-n+2), .ocultarBotones h1, .ocultarBotones table th:nth-last-child(-n+2), .ocultarBotones table td:nth-last-child(-n+2) {
+  display: none;
+}
+
+.botones {
+    display: flex;
+    gap: 10px;
+}
+
+.formularios{
+    margin-top: 850px;
+    display: flex;
+    flex-direction: column;
+}
+
+.formularios form{
+    margin-bottom: 950px;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+.inventario{
+    margin: 20px;
+}
+
+.ocultarBotonesInventario tr td:nth-last-child(-n+2), .ocultarBotonesInventario table th:nth-last-child(-n+2), .ocultarBotonesInventario table td:nth-last-child(-n+2) {
+  display: none;
+}

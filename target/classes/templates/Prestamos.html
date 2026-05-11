@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Inventario CIFPP</title>
+    <link rel="icon" type="image/png" href="/Imagenes/logo_centro.png">
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+</head>
+<body>
+    <h1>Préstamos</h1>
+    <div class="botones">
+        <a href="#anyadirPrestamo"><button>Añadir un préstamo</button></a><br/>
+        <a href="#buscarPorID"><button>Buscar por id</button></a><br/>
+        <a href="/volverAInicio"><button>Volver a inicio</button></a><br/>
+        <a href="/BuscarPrestamosActivos"><button>Buscar préstamos activos</button></a>
+    </div>
+    <div th:utext="${tabla}"></div>
+    <div class="formularios">
+        <form id="anyadirPrestamo" action="/anyadirPrestamo" method="post">
+            <label for="ususarioQueSolicitaElPrestamo">Introduce el codigo del usuario que solicita el préstamo:</label>
+            <input type="text" name="usuarioId" placeholder="Id Usuario" required><br/>
+            <label for="objetoPrestado">Introduce el codigo objeto a prestar: </label>
+            <input type="text" name="objetoId" placeholder="Id Objeto" required><br/>
+            <label for="motivo">Escribe el motivo del préstamo: </label>
+            <input type="text" name="motivo" placeholder="Motivo del préstamo"><br/>
+            <label for="motivo">Introduce la fecha límite del préstamo: </label>
+            <input type="date" name="fechaLimite" placeholder="Fecha límite del préstamo" required><br/>
+            <button type="submit">Solicitar préstamo</button>
+            <button><a href="/volverAInicio">Cancelar</a></button><br/>
+        </form>
+
+        <form id="buscarPorID" action="/buscarPrestamoPorID" method="post">
+            <label for="codigoObjeto">Introduce el código del prestamo a buscar: </label>
+            <input type="text" name="codigoPrestamo" placeholder="Código" required><br/>
+            <button type="submit">Buscar prestamo</button>
+            <button><a href="/volverAInicio">Cancelar</a></button><br/>
+        </form>
+    </div>
+</body>

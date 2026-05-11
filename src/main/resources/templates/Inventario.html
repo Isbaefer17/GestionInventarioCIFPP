@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Inventario CIFPP</title>
+    <link rel="icon" type="image/png" href="/Imagenes/logo_centro.png">
+    <link rel="stylesheet" th:href="@{/css/estilos.css}"> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script type="module" src="/JavaScript/convertirHTML_PDF.js"></script>
+</head>
+<body>
+    <h1>Inventario CIFPP</h1>
+    <button onclick="convertirHTML_PDF('inventario')">Generar PDF</button>
+    <a href="/volverAInicio"><button>Volver a inicio</button></a><br/>
+    <div class="inventario" id="inventario">
+        <div th:utext="${tablaObjetos}" class="ocultarBotonesInventario"></div>
+        <div th:utext="${tablaIncidencias}" class="ocultarBotonesInventario"></div>
+        <!-- <div th:utext="${tablaPrestamosActivos}"></div> -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Inventario CIFPP</title>
+    <link rel="icon" type="image/png" href="/Imagenes/logo_centro.png">
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+</head>
+<body>
+    <h1>Bievenido</h1>
+    <form th:action="@{/procesarLogin}" method="post">
+        <label for="username">Introduce tu ID :</label>
+        <input type="text" name="username" placeholder="Id" required><br/>
+
+        <label for="password">Introduce tu contraseña: </label>
+        <input type="password" name="password" placeholder="Contraseña" required><br/>
+
+        <button type="submit">Iniciar Sesión</button>
+    </form>
+
+        <div th:if="${param.error}">
+            <p style="color:red;">Usuario o contraseña incorrectos</p>
+        </div>
+</body>
+</html>
