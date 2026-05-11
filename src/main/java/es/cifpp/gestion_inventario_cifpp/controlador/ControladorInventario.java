@@ -65,7 +65,7 @@ public class ControladorInventario {
         
         modelo.addAttribute("tablaIncidencias",htmlIncidencias);
 
-        return "inventario";
+        return "Inventario";
     }
     
 }
